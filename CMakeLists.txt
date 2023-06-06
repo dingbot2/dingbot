@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.25)
+project(dingbot)
+message("thank for using dingbot.QQ group:603838409")
+find_package(Boost COMPONENTS program_options)
+add_executable(dingbot cmdline.cpp logger.cpp global.cpp main.cpp)
+target_link_libraries(dingbot ${Boost_PROGRAM_OPTIONS_LIBRARY})
