@@ -10,4 +10,8 @@ namespace dingbot::global {
     {
         debug = d;
     }
+    boost::filesystem::path getGlobalPath()
+    {
+        return boost::filesystem::current_path();
+    }
 }
