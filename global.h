@@ -5,5 +5,6 @@ namespace dingbot::global {
     bool getDebug();
     void setDebug(bool d);
     boost::filesystem::path getGlobalPath();
+    std::string getDingBotVersion();
 }
 #endif

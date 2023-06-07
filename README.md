@@ -12,7 +12,7 @@ boost.The core depend on go-cqhttp.
 mkdir _build
 cd _build
 cmake ..
-cmake . --build
+cmake --build .
 ```
 
 ## 依赖列表

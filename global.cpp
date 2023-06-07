@@ -14,4 +14,10 @@ namespace dingbot::global {
     {
         return boost::filesystem::current_path();
     }
+
+    std::string version = "1.0 beta";
+    std::string getDingBotVersion()
+    {
+        return version;
+    }
 }

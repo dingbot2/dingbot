@@ -7,6 +7,8 @@
 #include <fstream>
 #include "bot/bot.h"
 #include "botserver/botserver.h"
+#include "botapi/botapi.h"
+#include "plugin/plugin.h"
 
 void InitPath()
 {
@@ -62,8 +64,11 @@ int main(int argc,char **argv)
 {
     dingbot::cmdline::parse(argc,argv);
     dingbot::logger::InitLogger();
+    dingbot::logger::GetConsoleLogger()->info("dingbot version : {0}",dingbot::global::getDingBotVersion().c_str());
+    dingbot::logger::GetConsoleLogger()->info("dingbot QQ交流群 : 603838409");
     InitPath();
     InitGoCqhttp();
     dingbot::bot::Init();
+    dingbot::botapi::init(dingbot::bot::getCQHttpSetting().http);
     dingbot::botserver::start();
 }
