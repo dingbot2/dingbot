@@ -3,6 +3,6 @@
 #include "apimodel.h"
 namespace dingbot::botapi {
     void init(int p);
-    dingbot::apimodel::Model get();
+    boost::shared_ptr<dingbot::apimodel::Model> get();
 }
 #endif //DINGBOT_BOTAPI_H

@@ -70,5 +70,6 @@ int main(int argc,char **argv)
     InitGoCqhttp();
     dingbot::bot::Init();
     dingbot::botapi::init(dingbot::bot::getCQHttpSetting().http);
+    dingbot::plugin::loadPlugins();
     dingbot::botserver::start();
 }

@@ -1,13 +1,13 @@
 #include "botapi.h"
 namespace dingbot::botapi {
-    dingbot::apimodel::Model _model;
+    boost::shared_ptr<dingbot::apimodel::Model> _model;
 
     void init(int p)
     {
-        _model = dingbot::apimodel::Model(p);
+        _model = dingbot::apimodel::makeInstance();
     }
 
-    dingbot::apimodel::Model get()
+    boost::shared_ptr<dingbot::apimodel::Model> get()
     {
         return _model;
     }

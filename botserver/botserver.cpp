@@ -6,6 +6,7 @@
 #include <thread>
 #include "../bot/bot.h"
 #include <boost/json.hpp>
+#include "../plugin/plugin.h"
 
 namespace dingbot::botserver {
     void handleMessage(const std::string& msg)
@@ -25,6 +26,7 @@ namespace dingbot::botserver {
             if(message_type == "private") //私聊消息
             {
                 dingbot::logger::GetConsoleLogger()->debug("收到来自{0}的私聊消息:{1}",user_id.c_str(),message.c_str());
+                dingbot::plugin::sendEventPrivateMsg(message,user_id);
                 return;
             }
             if(message_type == "group") //群聊消息

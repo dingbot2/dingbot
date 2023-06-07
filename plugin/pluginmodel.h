@@ -17,5 +17,7 @@ class BOOST_SYMBOL_VISIBLE dingbot_plugin_model
 public:
     virtual dingbot_plugin_info getPluginInfo() const = 0;
     virtual void setApiModel(boost::shared_ptr<dingbot::apimodel::Model> _api) = 0;
+
+    virtual void event_private_msg(string message,string sender_id) = 0;
 };
 #endif //DINGBOT_PLUGINMODEL_H
